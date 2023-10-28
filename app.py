@@ -20,7 +20,7 @@ def show_home(id):
   home = load_home(id)
   if not home:
     return "Home not found", 404
-  return render_template('jobpage.html', home=home)
+  return render_template('homepage.html', home=home)
 
 @app.route('/api/home/<id>')
 def show_homes(id):
