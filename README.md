@@ -1,5 +1,5 @@
   # flask-project
-A careers website for Jovian. 
+A website which helps the bachelor's to get apartments.
 
 Deployed link is here:
-https://flask-project-v2.onrender.com
+https://bachelors-den.onrender.com
