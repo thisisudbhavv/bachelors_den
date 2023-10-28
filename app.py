@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template, request
-from database import load_home, load_homes, add_application
+from database import load_home, load_homes, add_apply
 
 app = Flask(__name__)
 
@@ -31,8 +31,8 @@ def show_homes(id):
 def apply_home(id):
   data = request.form
   home = load_home(id)
-  add_application(id, data)
-  return render_template("application_submit.html", application=data, home=home)
+  add_apply(id, data)
+  return render_template("application_submit.html", apply=data, home=home)
 
 
 if __name__ == '__main__':

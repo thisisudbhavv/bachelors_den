@@ -29,19 +29,19 @@ def load_home(id):
     return dict(rows[0]._mapping)
 
 
-def add_application(home_id, application):
+def add_apply(home_id, apply):
   with engine.connect() as conn:
     query = text(
-        "INSERT INTO applications (home_id, name, phone_number, email, details, people, aadhar_link) VALUES (:home_id, :name, :phone_number, :email, :details, :people, :aadhar_link)"
+        "INSERT INTO apply (home_id, name, phone_number, email, details, people, aadhar_link) VALUES (:home_id, :name, :phone_number, :email, :details, :people, :aadhar_link)"
     )
 
     conn.execute(
         query, {
             "home_id": home_id,
-            "name": application["name"],
-            "phone_number": application["phone_number"],
-            "email": application["email"],
-            "details": application["details"],
-            "people": application["people"],
-            "aadhar_link": application["aadhar_link"]
+            "name": apply["name"],
+            "phone_number": apply["phone_number"],
+            "email": apply["email"],
+            "details": apply["details"],
+            "people": apply["people"],
+            "aadhar_link": apply["aadhar_link"]
         })

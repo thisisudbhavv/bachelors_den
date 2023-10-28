@@ -10,25 +10,25 @@
     <div class="container">
       <h1 class="text-center mt-2 mb-4">Bachelor's Den</h1>
 
-      <p>Your Application for the role of "{{job['title']}}" has been submitted.</p>
+      <p>Your Application for enqiry of "{{home['house']}}" has been submitted.</p>
       
       <b>Name</b>
-      <div class="mb-2">{{application['name']}}</div>
+      <div class="mb-2">{{apply['name']}}</div>
   
       <b>Phone Number</b>
-      <div class="mb-2">{{application['email']}}</div>
+      <div class="mb-2">{{apply['phone_number']}}</div>
   
       <b>Email</b>
-      <div class="mb-2">{{application['linkedIn']}}</div>
+      <div class="mb-2">{{apply['email']}}</div>
   
       <b>College/Job Detail</b>
-      <div class="mb-2">{{application['education']}}</div>
+      <div class="mb-2">{{apply['details']}}</div>
   
       <b>People Detail</b>
-      <div class="mb-2">{{application['workExperience']}}</div>
+      <div class="mb-2">{{apply['people']}}</div>
   
       <b>Aadhar Card link</b>
-      <div class="mb-2">{{application['resume']}}</div>
+      <div class="mb-2">{{apply['aadhar_link']}}</div>
     </div>
       
     {% include 'footer.html' %}
