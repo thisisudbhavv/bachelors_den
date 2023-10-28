@@ -14,8 +14,9 @@
     }
 
     input[type="text"],
-    input[type="email"],
+    input[type="tel"],
     input[type="url"],
+    input[type="email"],
     textarea {
       width: 100%;
       padding: 10px;
@@ -42,35 +43,35 @@
 </head>
 <body>
   <h4 class="mb-3">Application Form</h4>
-  <form action="/job/{{job['id']}}/apply" method="post">
+  <form action="/home/{{home['id']}}/apply" method="post">
     <div class="mb-2">
-      <label>Full Name</label><br>
+      <label>Applicant Name</label><br>
       <input type="text" name="name" placeholder="Name" required>
     </div>
   
     <div class="mb-2">
+      <label>Phone Number</label><br>
+      <input type="tel" name="phone_number" placeholder="1234567890" required>
+    </div>
+  
+    <div class="mb-2">
       <label>Email</label><br>
-      <input type="email" name="email" placeholder="your@email.com" required>
+      <input type="email" name="email" placeholder="your@email.com" >
     </div>
   
     <div class="mb-2">
-      <label>LinkedIn URL</label><br>
-      <input type="url" name="linkedIn" placeholder="linkedin.com/yourID" >
+      <label>College/Job details</label><br>
+      <textarea name="details"></textarea>
     </div>
   
     <div class="mb-2">
-      <label>Education</label><br>
-      <textarea name="education"></textarea>
+      <label>Details of people</label><br>
+      <textarea name="people"></textarea>
     </div>
   
     <div class="mb-2">
-      <label>Work Experience</label><br>
-      <textarea name="workExperience"></textarea>
-    </div>
-  
-    <div class="mb-2">
-      <label>Resume URL</label><br>
-      <input type="url" name="resume">
+      <label>Aadhar Card (Upload on drive and paste link)</label><br>
+      <input type="url" name="aadhar_link">
     </div>
     
     <input type="submit">

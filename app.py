@@ -1,38 +1,38 @@
 from flask import Flask, jsonify, render_template, request
-from database import load_job, load_jobs, add_application
+from database import load_home, load_homes, add_application
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():
-  jobs = load_jobs()
-  return render_template('home.html', jobs=jobs)
+  homes = load_homes()
+  return render_template('home.html', homes=homes)
 
 
-@app.route('/api/jobs')
-def list_jobs():
-  return jsonify(load_jobs())
+@app.route('/api/homes')
+def list_homes():
+  return jsonify(load_homes())
 
 
-@app.route('/job/<id>')
-def show_job(id):
-  job = load_job(id)
-  if not job:
-    return "Job not found", 404
-  return render_template('jobpage.html', job=job)
+@app.route('/home/<id>')
+def show_home(id):
+  home = load_home(id)
+  if not home:
+    return "Home not found", 404
+  return render_template('jobpage.html', home=home)
 
-@app.route('/api/job/<id>')
-def show_jobs(id):
-  job = load_job(id)
-  return jsonify(job)
+@app.route('/api/home/<id>')
+def show_homes(id):
+  home = load_home(id)
+  return jsonify(home)
 
-@app.route('/job/<id>/apply', methods=['post'])
-def apply_job(id):
+@app.route('/home/<id>/apply', methods=['post'])
+def apply_home(id):
   data = request.form
-  job = load_job(id)
+  home = load_home(id)
   add_application(id, data)
-  return render_template("application_submit.html", application=data, job=job)
+  return render_template("application_submit.html", application=data, home=home)
 
 
 if __name__ == '__main__':

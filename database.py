@@ -10,18 +10,18 @@ engine = create_engine(db_conn_string,
                        }})
 
 
-def load_jobs():
+def load_homes():
   with engine.connect() as conn:
-    result = conn.execute(text("select * from jobs"))
-    jobs = []
+    result = conn.execute(text("select * from homes"))
+    homes = []
     for row in result.all():
-      jobs.append(dict(row._mapping))
-    return jobs
+      homes.append(dict(row._mapping))
+    return homes
 
 
-def load_job(id):
+def load_home(id):
   with engine.connect() as conn:
-    result = conn.execute(text("select * from jobs where id = :id"),
+    result = conn.execute(text("select * from homes where id = :id"),
                           {"id": id})
     rows = result.all()
     if len(rows) == 0:
@@ -29,19 +29,19 @@ def load_job(id):
     return dict(rows[0]._mapping)
 
 
-def add_application(job_id, application):
+def add_application(home_id, application):
   with engine.connect() as conn:
     query = text(
-        "INSERT INTO applications (job_id, full_name, email, linkedin_url, education, work_experience, resume_url) VALUES (:job_id, :name, :email, :linkedIn, :education, :workExperience, :resume)"
+        "INSERT INTO applications (home_id, name, phone_number, email, details, people, aadhar_link) VALUES (:home_id, :name, :phone_number, :email, :details, :people, :aadhar_link)"
     )
 
     conn.execute(
         query, {
-            "job_id": job_id,
+            "home_id": home_id,
             "name": application["name"],
+            "phone_number": application["phone_number"],
             "email": application["email"],
-            "linkedIn": application["linkedIn"],
-            "education": application["education"],
-            "workExperience": application["workExperience"],
-            "resume": application["resume"]
+            "details": application["details"],
+            "people": application["people"],
+            "aadhar_link": application["aadhar_link"]
         })

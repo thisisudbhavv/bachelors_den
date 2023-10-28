@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .view-button {
+      border: 2px solid #007bff;
+      background-color: transparent;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .view-button:hover {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div style="display: flex; justify-content: space-between; margin-bottom: 16px; border-bottom: 2px solid #e1e1e1; padding: 8px;">
+    <div style="flex: 1;">
+      <h4 style="color: rgb(120, 120, 120); margin-bottom: 4px;">{{home['house']}}</h4>
+      <div><b>Location:</b> {{home['location']}}</div>
+      {% if 'rent' in home %}
+        <div><b>Rent:</b> {{home['rent']}}</div>
+      {% endif %}
+    </div>
+    <div style="flex: 0;">
+      <a href="/home/{{home['id']}}" type="button" class="view-button">View</a>
+    </div>
+  </div>
+</body>
+</html>

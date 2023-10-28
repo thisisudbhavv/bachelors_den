@@ -49,23 +49,23 @@
     {% include 'nav.html' %}
     {% include 'banner.html' %}
     <div id="container">
-      <h1>Jovian Careers</h1>
+      <h1>Bachelor's Den</h1>
       <div class="row" style="margin-bottom: 16px;">
         <div class="col-md-6">
-          <p class="bodytext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="bodytext">Namaste from Bachelor's Den – your doorway to hassle-free apartment rentals for bachelor students across Noida! And I'm also a college student, dedicated to simplifying the rental process. Our mission is clear: to empower students by connecting them directly with apartment owners who are eager to rent to bachelor students, all while bypassing the middlemen and brokers who ask lot's of money as you know. With Bachelor's Den, we make apartment hunting easier for bachelor's, more affordable, and broker-free. Join our vibrant community and experience the freedom of finding your apartment effortlessly – only at <b>Bachelor's Den</b>.</p>
         </div>
         <div class="d-none d-md-block col-md-6">
-          <img src="/static/people.jpg" style="height: 320px; border-radius: 4px;">
+          <img src="static/jonah-brown-l1iwe7l6-2Q-unsplash.jpg" style="height: 320px; border-radius: 4px;">
         </div>
       </div>
-      <h2>Job Openings</h2>
+      <h2>Apartment Listings</h2>
       <div>
-        {% for job in jobs %}
-          {% include 'jobitem.html' %}
+        {% for home in homes %}
+          {% include 'homelist.html' %}
         {% endfor %}
       </div>
       <div style="text-align:center">
-        <a class='button' href='https://thisisudbhavv.design/'>Contact Us</a>
+        <a class='button' href='https://thisisudbhavv.design/'>Contact Me</a>
       </div>
     </div>
     {% include 'footer.html' %}
